@@ -9,6 +9,8 @@ import {
 import { UserField } from './UserField/UserField';
 import { IUser } from '../../types/users';
 import { UsersSort } from './UsersSort/UsersSort';
+import { Button } from '@mui/material';
+import styles from '../../common/styles/app.module.scss';
 
 export const UsersList: FC = () => {
   const dispatch = useDispatch();
@@ -38,10 +40,14 @@ export const UsersList: FC = () => {
       <ul>
         {users.map((user: IUser) => (
           <li key={user.id}>
-            {user.name}
-            <button onClick={() => handleDeleteUser(user.id)}>
+            <span className={styles.third__heading}>{user.name}</span>
+            <Button
+              className={styles.button__left}
+              variant='outlined'
+              onClick={() => handleDeleteUser(user.id)}
+            >
               Delete user
-            </button>
+            </Button>
           </li>
         ))}
       </ul>

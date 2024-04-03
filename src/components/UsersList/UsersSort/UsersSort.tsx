@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { FC } from 'react';
 
 interface IUserSort {
@@ -5,5 +6,9 @@ interface IUserSort {
 }
 
 export const UsersSort: FC<IUserSort> = ({ sortedUsersByName }: IUserSort) => {
-  return <button onClick={sortedUsersByName}>Sort by name</button>;
+  return (
+    <Button variant='outlined' onClick={sortedUsersByName}>
+      Sort by name
+    </Button>
+  );
 };
